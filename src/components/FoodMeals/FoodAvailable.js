@@ -27,6 +27,42 @@ const DUMMY_MEALS = [
     description: "Healthy...and green...",
     price: 18.99,
   },
+  {
+    id: "m5",
+    name: "Italian Pizza",
+    description: "Healthy...and fat...",
+    price: 15.99,
+  },
+  {
+    id: "m6",
+    name: "Maroco Coscus",
+    description: "Healthy...and with routes...",
+    price: 40.99,
+  },
+  {
+    id: "m7",
+    name: "Meat Lazania",
+    description: "Meat...and all surrunded...",
+    price: 11.99,
+  },
+  {
+    id: "m8",
+    name: "Arab salat",
+    description: "Healthy...and with a lot of colors...",
+    price: 5.99,
+  },
+  {
+    id: "m9",
+    name: "Meat balls",
+    description: "Meat...and spagheti...",
+    price: 10.99,
+  },
+  {
+    id: "m10",
+    name: "Amrican Staek",
+    description: "Meat...and more meat...",
+    price: 22.99,
+  },
 ];
 const FoodAvailable = () => {
   return (
