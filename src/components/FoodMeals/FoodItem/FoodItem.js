@@ -2,9 +2,8 @@ import React from "react";
 import FoodAddForm from "./FoodAddForm";
 import classes from "./FoodItem.module.css";
 
-
 const FoodItem = (props) => {
-    const price = `$${props.price.toFixed(2)}`
+  const price = `$${props.price.toFixed(2)}`;
   return (
     <li className={classes.foodItem}>
       <div>
@@ -13,7 +12,7 @@ const FoodItem = (props) => {
         <div className={classes.price}>{price}</div>
       </div>
       <div>
-        <FoodAddForm/>
+        <FoodAddForm />
       </div>
     </li>
   );

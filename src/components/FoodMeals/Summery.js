@@ -1,5 +1,5 @@
-import React from 'react'
-import classes from './Summery.module.css'
+import React from "react";
+import classes from "./Summery.module.css";
 const Summery = () => {
   return (
     <section className={classes.summary}>
@@ -13,7 +13,7 @@ const Summery = () => {
         of course by experienced chefs!
       </p>
     </section>
-  )
-}
+  );
+};
 
-export default Summery
+export default Summery;
