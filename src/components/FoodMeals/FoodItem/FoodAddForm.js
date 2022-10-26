@@ -1,11 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef ,useState} from "react";
 import classes from "./FoodAddForm.module.css";
 import Input from "./../../UI/Input";
+
 const FoodAddForm = (props) => {
+  const [validAMount , setValidAmount] = useState(true)
   const inputRef = useRef();
   const submitHandler = (e) => { 
     e.preventDefault()
-  }
+    const amount = inputRef.current.value;
+    const amountNum = +amount;
+    if(amount.trim().length === 0 || amountNum <1 || amountNum > 10){
+      setValidAmount(false)
+      return
+    }
+
+  };
   return (
     <form onSubmit={submitHandler} className={classes.form}>
       <Input
@@ -21,6 +30,8 @@ const FoodAddForm = (props) => {
         }}
       />
       <button>+ Add</button>
+      {!validAMount && <small>Please EnterValid Amount (1-10) </small>}
+
     </form>
   );
 };
