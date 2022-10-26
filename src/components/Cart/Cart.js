@@ -1,15 +1,20 @@
 import Model from "../UI/Model";
-import React from "react";
+import React ,{useContext} from "react";
 import classes from "./Cart.module.css";
+import CartContext from "../../store/cartContext";
 
 function Cart(props) {
+  const cartContext = useContext(CartContext);
+  const uniqeItems = Array.from(new Set(cartContext.items.map(a => a.id)))
+  .map(id => {
+    return cartContext.items.find(a => a.id === id)
+  })
+  
+  console.log(uniqeItems)
   const cartItems = (
     <ul className={classes.cartItems}>
-      {[
-        { id: "c1", name: "Sushi", amount: 2, price: 12.99 },
-        { id: "c2", name: "Lazania", amount: 2, price: 12.99 },
-      ].map((item) => (
-        <li key={item.id}>{item.name}</li>
+      {uniqeItems.map((item) => (
+        <li key={item.id}>{item.name} - {item.amount}</li>
       ))}
     </ul>
   );
@@ -18,7 +23,7 @@ function Cart(props) {
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount:</span>
-        <span>22.99</span>
+        <span>${cartContext.totalAmount.toFixed(2)}</span>
       </div>
       <div className={classes.buttons}>
         <button

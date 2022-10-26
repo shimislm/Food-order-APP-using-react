@@ -14,6 +14,8 @@ const FoodAddForm = (props) => {
       return
     }
 
+    props.addItem(amountNum)
+
   };
   return (
     <form onSubmit={submitHandler} className={classes.form}>
