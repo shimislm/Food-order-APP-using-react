@@ -5,14 +5,9 @@ import Cart from "./components/Cart/Cart";
 import CartProvider from './store/CartProvider';
 import CartContext from './store/cartContext';
 
-const defaultCartState={
-  items:[],
-  totalAmount: 0,
-}
 
 function App() {
   const [cartShow, setCartShow] = useState(false);
-  // const [items , upadateItems] = 
   
   const cartShowHandler = () => {
     setCartShow(!cartShow);
@@ -21,6 +16,7 @@ function App() {
     <CartProvider value={CartContext}>
       {cartShow && <Cart cartShowHandler={cartShowHandler} />}
       <Header cartShowHandler={cartShowHandler} />
+      <h2>{}</h2>
       <main>
         <FoodMeals />
       </main>
