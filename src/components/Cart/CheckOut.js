@@ -19,7 +19,7 @@ const CheckOut = (props) => {
             city: cityRef.current.value,
             phone: phoneRef.current.value
         })
-        props.setIsCheckOut(false)
+        props.cartShowHandler(false)
     }
   return (
     <form className="m-auto" onSubmit={confirmCheckOut}>
