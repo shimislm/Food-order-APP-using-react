@@ -1,11 +1,14 @@
 .cart-item {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 4px solid #01044d;
-  padding: 16px 0;
-  margin: 16px 0;
+  padding: 16px 48px;
+  margin:  16px 0;
 
+}
+.allSummery{
+  max-width: 45vh;
 }
 
 .cart-item h2 {
@@ -15,13 +18,14 @@
 }
 
 .summary {
-  width: 160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .price {
+  margin-right: 4px;
   font-weight: bold;
   color: #020fff84;
 }
@@ -35,8 +39,10 @@
 }
 
 .actions {
+  max-width: 40vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  /* flex-direction: column; */
 }
 
 @media (min-width: 768px) {

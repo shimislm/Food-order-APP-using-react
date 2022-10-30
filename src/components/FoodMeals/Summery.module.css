@@ -1,9 +1,9 @@
 .summary {
     text-align: center;
-    max-width: 720px;
-    width: 90%;
+    max-width: 900px;
     margin: auto;
-    margin-top: -192px;
+    margin-top: -256px;
+    margin-bottom: 32px;
     position: relative;
     background-color: #061a8ad4;
     color: white;
