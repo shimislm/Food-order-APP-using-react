@@ -24,7 +24,7 @@ function Cart(props) {
   };
 
   const submitOrder = (userData) => {
-    axios.post("https://restaurant-app-shimon-default-rtdb.europe-west1.firebasedatabase.app/orders.json" ,JSON.stringify({userData, cartContext })).catch((err)=>console.log(err))
+    axios.post("https://restaurant-app-shimon-default-rtdb.europe-west1.firebasedatabase.app/orders.json" ,JSON.stringify({userData,  cart:cartContext })).catch((err)=>console.log(err))
   };
 
   const cartItems = (
@@ -51,6 +51,7 @@ function Cart(props) {
       {checkedOut && (
         <CheckOut
           submitOrder={submitOrder}
+          setIsCheckOut={setIsCheckOut}
           cartShowHandler={props.cartShowHandler}
         />
       )}

@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef , useContext} from "react";
+import CartContext from "../../store/cartContext";
 import classes from "./CheckOut.module.css";
 
 const CheckOut = (props) => {
+    const cartContext = useContext(CartContext);
     const nameRef = useRef()
     const addressRef = useRef()
     const cityRef = useRef()
@@ -17,7 +19,7 @@ const CheckOut = (props) => {
             city: cityRef.current.value,
             phone: phoneRef.current.value
         })
-
+        props.setIsCheckOut(false)
     }
   return (
     <form className="m-auto" onSubmit={confirmCheckOut}>
@@ -44,7 +46,7 @@ const CheckOut = (props) => {
         </div>
         <div className={classes.actions}>
         <button type="button" onClick={props.cartShowHandler}>Cancel</button>
-          <button>Confirm</button>
+          <button onClick={cartContext.removeAll}>Confirm</button>
         </div>
       </div>
     </form>
