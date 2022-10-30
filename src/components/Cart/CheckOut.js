@@ -1,26 +1,24 @@
-import React, { useRef , useContext} from "react";
+import React, { useRef, useContext } from "react";
 import CartContext from "../../store/cartContext";
 import classes from "./CheckOut.module.css";
 
 const CheckOut = (props) => {
-    const cartContext = useContext(CartContext);
-    const nameRef = useRef()
-    const addressRef = useRef()
-    const cityRef = useRef()
-    const phoneRef = useRef()
+  const cartContext = useContext(CartContext);
+  const nameRef = useRef();
+  const addressRef = useRef();
+  const cityRef = useRef();
+  const phoneRef = useRef();
 
-
-
-    const confirmCheckOut = (e) => { 
-        e.preventDefault()
-        props.submitOrder({
-            name: nameRef.current.value,
-            address: addressRef.current.value,
-            city: cityRef.current.value,
-            phone: phoneRef.current.value
-        })
-        props.cartShowHandler(false)
-    }
+  const confirmCheckOut = (e) => {
+    e.preventDefault();
+    props.submitOrder({
+      name: nameRef.current.value,
+      address: addressRef.current.value,
+      city: cityRef.current.value,
+      phone: phoneRef.current.value,
+    });
+    props.cartShowHandler(false);
+  };
   return (
     <form className="m-auto" onSubmit={confirmCheckOut}>
       <div className="row">
@@ -37,7 +35,7 @@ const CheckOut = (props) => {
         <div className="col-md-6">
           <div className={classes.control}>
             <label htmlFor="city">Your City</label>
-            <input type="text" id="city" ref={cityRef}/>
+            <input type="text" id="city" ref={cityRef} />
           </div>
           <div className={classes.control}>
             <label htmlFor="phone">Your Phone</label>
@@ -45,7 +43,9 @@ const CheckOut = (props) => {
           </div>
         </div>
         <div className={classes.actions}>
-        <button type="button" onClick={props.cartShowHandler}>Cancel</button>
+          <button type="button" onClick={props.cartShowHandler}>
+            Cancel
+          </button>
           <button onClick={cartContext.removeAll}>Confirm</button>
         </div>
       </div>
